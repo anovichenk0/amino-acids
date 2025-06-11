@@ -3,6 +3,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+* {
+    box-sizing: border-box;
+}
+
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -65,7 +69,7 @@ body {
 }
 
 h1 {
-    font-size: 3.2em;
+    font-size: clamp(2rem, 1rem + 3vw, 3.2rem);
     line-height: 1.1;
 }
 
@@ -138,6 +142,16 @@ button:focus-visible {
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
 }
+
+@theme static {
+    --color-cysteine: #ffea00;
+    --color-hydrophobic: #67e4a6;
+    --color-glycine: #c4c4c4;
+    --color-negative: #fc9cac;
+    --color-positive: #bb99ff;
+    --color-polar: #80bfff;
+}
+@source inline('{dark:,}{bg,text}-{cysteine,hydrophobic,glycine,negative,positive,polar}');
 
 .dark {
     --background: oklch(0.141 0.005 285.823);

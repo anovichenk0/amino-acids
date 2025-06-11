@@ -6,7 +6,6 @@ import {
     FormItem,
     FormLabel,
     FormControl,
-    FormDescription,
     FormMessage,
     Form,
 } from "../form";
@@ -15,8 +14,13 @@ import { Button } from "../button";
 import type { z } from "zod";
 import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
+import { useAminoContext } from "../AminoContext";
 
-const AminoForm = ({ className, ...props }: ComponentProps<"form">) => {
+type Props = ComponentProps<"form"> & {
+    onFormSubmit?: (values: z.infer<typeof schema>) => void;
+};
+
+const AminoForm = ({ className, onFormSubmit, ...props }: Props) => {
     const form = useForm<z.infer<typeof schema>>({
         resolver: zodResolver(schema),
         defaultValues: {
@@ -24,9 +28,11 @@ const AminoForm = ({ className, ...props }: ComponentProps<"form">) => {
             aminoSecond: "",
         },
     });
+    const { setAminos } = useAminoContext();
 
     const onSubmit = (values: z.infer<typeof schema>) => {
-        console.log(values);
+        onFormSubmit?.(values);
+        setAminos(values);
     };
 
     return (
@@ -71,7 +77,7 @@ const AminoForm = ({ className, ...props }: ComponentProps<"form">) => {
 
                 <div className="flex justify-end">
                     <Button form="amino-form" type="submit">
-                        Отправить
+                        Обновить
                     </Button>
                 </div>
             </form>
