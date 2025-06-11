@@ -10,26 +10,7 @@ import React, {
     type ComponentProps,
     type ReactNode,
 } from "react";
-
-import {
-    Calculator,
-    Calendar,
-    CreditCard,
-    Settings,
-    Smile,
-    User,
-} from "lucide-react";
-
-import {
-    CommandDialog,
-    CommandEmpty,
-    CommandGroup,
-    CommandInput,
-    CommandItem,
-    CommandList,
-    CommandSeparator,
-    CommandShortcut,
-} from "@/components/command";
+import { CommandDialog, CommandInput } from "@/components/command";
 import { cn } from "@/lib/utils";
 
 const FinderContext = createContext({

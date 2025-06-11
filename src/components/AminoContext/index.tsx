@@ -1,4 +1,3 @@
-import type { AminoAcid } from "@/lib/types";
 import {
     createContext,
     useContext,

@@ -4,14 +4,12 @@ import {
     useCallback,
     useContext,
     useEffect,
-    useLayoutEffect,
     useMemo,
     useRef,
     useState,
     type ComponentProps,
     type ReactNode,
 } from "react";
-import { flushSync } from "react-dom";
 
 import { insertText } from "@/lib/insertText";
 import { useDebounce } from "@/lib/useDebounce";
