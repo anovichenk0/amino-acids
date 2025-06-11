@@ -95,9 +95,7 @@ export const FinderProvider = ({ children }: { children: ReactNode }) => {
 export const Finder = () => {
     const [open, setOpen] = useState(false);
     const { search, setSearch } = useFinderContext();
-    // const [search, setSearch] = useState("");
 
-    useEffect(() => console.log("set search changed"), [setSearch]);
     useEffect(() => {
         const down = (e: KeyboardEvent) => {
             if ((e.key === "f" || e.key === "q") && (e.metaKey || e.ctrlKey)) {

@@ -3,10 +3,6 @@ export function insertText(
     textToInsert: string,
     position: number
 ) {
-    console.log(position);
-    console.log(original);
-    console.log(original.at(position));
-
     if (original.at(position) === "-") {
         return (
             original.substring(0, position).padEnd(position, "-") +

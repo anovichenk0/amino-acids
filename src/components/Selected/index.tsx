@@ -26,7 +26,6 @@ const SelectedContext = createContext({
 export const SelectedProvider = ({ children }: { children: ReactNode }) => {
     const [selected, setSelected] = useState("");
     const [copiedText, setCopiedText] = useDebounce(selected, 1000);
-    console.log({ selected, copiedText });
 
     useEffect(() => {
         async function effect() {
