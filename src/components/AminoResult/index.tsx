@@ -30,7 +30,7 @@ const AminoResult = () => {
                             enabledClassName="border-fuchsia-400 border-2 border-solid"
                         >
                             <Selectable
-                                className="rounded-md"
+                                className="rounded-md size-12"
                                 selectedClassName="border-dotted border-2 border-black"
                                 order={i}
                             >
@@ -61,8 +61,8 @@ const AminoResult = () => {
                                 enabledClassName="border-fuchsia-400 border-2 border-solid"
                             >
                                 <Selectable
-                                    className="rounded-md"
-                                    selectedClassName="border-dotted border-2 border-zinc "
+                                    className="rounded-md size-12"
+                                    selectedClassName="border-dotted border-2 border-zinc"
                                     order={i}
                                 >
                                     <AminoColor
@@ -96,7 +96,7 @@ const RenderPerRow = ({
     position: number;
     rowClassName?: string;
 }) => {
-    const aminoSize = 44;
+    const aminoSize = 48;
     const gap = 4;
 
     const aminoCount = aligned.length;

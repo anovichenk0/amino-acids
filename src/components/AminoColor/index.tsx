@@ -13,7 +13,7 @@ const AminoColor = ({ amino, forced, className, ...props }: Props) => {
     return (
         <div
             className={cn(
-                `bg-${group} p-2 rounded-md text-lg size-11 inline-flex justify-center items-center`,
+                `bg-${group} p-2 rounded-md text-lg w-full h-full inline-flex justify-center items-center`,
                 {
                     [`bg-${forced}`]: forced,
                 },
