@@ -123,6 +123,7 @@ const Selectable = ({
 
     return (
         <div
+            tabIndex={0}
             ref={ref}
             className={cn(className, {
                 [selectedClassName]: isSelected,
